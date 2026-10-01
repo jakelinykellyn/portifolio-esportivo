@@ -1,0 +1,652 @@
+  /* =========================
+           VARIÁVEIS
+        ========================= */
+
+        :root {
+            --creme: #F5F0E8;
+            --creme-escuro: #E9E0D3;
+            --oliva: #657153;
+            --oliva-escuro: #28352D;
+            --terracota: #B9654A;
+            --rosa: #A96B70;
+            --branco: #FFFFFF;
+            --preto: #20251F;
+            --sombra: 0 20px 50px rgba(40, 53, 45, 0.12);
+            --titulo: "Playfair Display", serif;
+            --texto: "DM Sans", sans-serif;
+        }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--creme);
+            color: var(--preto);
+            font-family: var(--texto);
+            line-height: 1.6;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(245, 240, 232, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(40, 53, 45, 0.08);
+        ;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 18px 25px;
+        }
+
+        .logo {
+            font-family: var(--titulo);
+            font-size: 25px;
+            font-weight: 700;
+            color: var(--oliva-escuro);
+        }
+
+        .logo span {
+            color: var(--terracota);
+        }
+
+        .menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .menu a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: var(--terracota);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                     rgba(40, 53, 45, 0.92) 0%,
+                     rgba(78, 91, 61, 0.72) 42%,
+                     rgba(111, 121, 85, 0.25) 75%,
+                     rgba(111, 121, 85, 0.05) 100%
+                ),
+                url("img/brasil-ride.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 140px 25px 80px;
+            color: var(--branco);
+        }
+
+        .tag {
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .foto-podio {
+        margin-top: 25px;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        border-radius: 14px;
+        }
+
+        .foto-podio img {
+        width: 100%;
+         height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+        }
+
+.resultado:hover .foto-podio img {
+    transform: scale(1.04);
+}
+        .hero h1 {
+            font-family: var(--titulo);
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: 0.95;
+            max-width: 750px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #D89A81;
+        }
+
+        .hero-text {
+            max-width: 570px;
+            font-size: 19px;
+            color: rgba(255,255,255,0.88);
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            padding: 14px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--terracota);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--oliva-escuro);
+        }
+
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-header {
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: var(--terracota);
+
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: var(--titulo);
+            font-size: clamp(38px, 5vw, 65px);
+            line-height: 1.05;
+            color: var(--oliva-escuro);
+        }
+
+        .section-description {
+            max-width: 650px;
+
+            margin-top: 18px;
+
+            color: #60665F;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           SOBRE
+        ========================= */
+
+        .sobre {
+            background: var(--creme);
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .sobre-img {
+            height: 560px;
+            border-radius: 30px;
+            overflow: hidden;
+            background: var(--oliva);
+            box-shadow: var(--sombra);
+        }
+
+        .sobre-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .sobre-text p {
+            margin-bottom: 20px;
+            color: #555B55;
+        }
+
+        .quote {
+            border-left: 4px solid var(--terracota);
+            padding-left: 20px;
+            margin-top: 30px;
+            font-family: var(--titulo);
+            font-size: 26px;
+            color: var(--oliva-escuro);
+        }
+
+
+        /* =========================
+           MTB
+        ========================= */
+
+        .mtb {
+            background: var(--oliva-escuro);
+            color: white;
+        }
+
+        .mtb .section-title {
+            color: white;
+        }
+
+        .mtb .section-description {
+            color: rgba(255,255,255,0.68);
+        }
+
+        .mtb-intro {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .mtb-number {
+            font-family: var(--titulo);
+            font-size: 150px;
+            line-height: 0.8;
+            color: var(--terracota);
+        }
+
+        .mtb-number-text {
+            color: rgba(255,255,255,0.65);
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           RESULTADOS
+        ========================= */
+
+        .resultados {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 60px;
+        }
+
+        .resultado {
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            background: rgba(255,255,255,0.04);
+            transition: 0.3s;
+        }
+
+        .resultado:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .resultado .ano {
+            font-size: 12px;
+            color: #D89A81;
+            font-weight: 700;
+        }
+
+        .resultado h3 {
+            margin: 10px 0;
+            font-family: var(--titulo);
+            font-size: 23px;
+        }
+
+        .resultado p {
+            color: rgba(255,255,255,0.65);
+            font-size: 14px;
+        }
+
+        .podio {
+            color: var(--terracota);
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           GALERIA
+        ========================= */
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .foto {
+            height: 350px;
+            overflow: hidden;
+            border-radius: 22px;
+            position: relative;
+            background: var(--creme-escuro);
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .foto:hover img {
+            transform: scale(1.06);
+        }
+
+        .foto-legenda {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 20px 20px;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.7)
+            );
+
+            color: white;
+        }
+
+
+        /* =========================
+           OUTROS ESPORTES
+        ========================= */
+
+        .esportes {
+            background: var(--creme);
+        }
+
+        .esportes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .esporte-card {
+            min-height: 470px;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            box-shadow: var(--sombra);
+        }
+
+        .esporte-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                transparent 25%,
+                rgba(40,53,45,0.9)
+            );
+        }
+
+        .escalada {
+            background-image: url("img/escalada-esportiva.jpg");
+        }
+
+        .crossfit {
+            background-image: url("img/crossfit.webp");
+        }
+
+        .esporte-content {
+            position: relative;
+            z-index: 2;
+            padding: 35px;
+            color: white;
+        }
+
+        .esporte-content span {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #E3AA91;
+        }
+
+        .esporte-content h3 {
+            font-family: var(--titulo);
+            font-size: 42px;
+            margin: 8px 0;
+        }
+
+        .esporte-content p {
+            color: rgba(255,255,255,0.78);
+            max-width: 430px;
+        }
+
+
+        /* =========================
+           PATROCÍNIOS
+        ========================= */
+
+        .parceiros {
+            background: var(--creme-escuro);
+            text-align: center;
+        }
+
+        .parceiros-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 70px;
+            margin-top: 45px;
+        }
+
+        .marca {
+            font-size: 25px;
+            font-weight: 700;
+            color: var(--oliva-escuro);
+            opacity: 0.75;
+        }
+
+
+        /* =========================
+           CONTATO
+        ========================= */
+
+        .contato {
+            background: var(--terracota);
+            color: white;
+            text-align: center;
+        }
+
+        .contato .section-title {
+            color: white;
+        }
+
+        .contato p {
+            max-width: 600px;
+            margin: 20px auto 35px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .contato .btn {
+            background: white;
+            color: var(--oliva-escuro);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--oliva-escuro);
+            color: rgba(255,255,255,0.65);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .menu {
+                display: none;
+            }
+
+            .sobre-grid,
+            .mtb-intro,
+            .esportes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resultados {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .galeria {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sobre-img {
+                height: 450px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 75px 20px;
+            }
+
+            .hero-content {
+                padding: 130px 20px 70px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero-text {
+                font-size: 16px;
+            }
+
+            .resultados,
+            .galeria {
+                grid-template-columns: 1fr;
+            }
+
+            .foto {
+                height: 400px;
+            }
+
+            .esporte-card {
+                min-height: 400px;
+            }
+
+            .esporte-content h3 {
+                font-size: 35px;
+            }
+
+            .mtb-number {
+                font-size: 100px;
+            }
+        }
+
